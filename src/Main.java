@@ -12,7 +12,7 @@ public class Main {
         employee[6] = new Employee("Гришина", "Анна", "Евгеньевна", 3, 32000);
         employee[7] = new Employee("Миронов", "Валерий", "Алексеевич", 5, 33000);
         employee[8] = new Employee("Барон", "Юрий", "Валентинович", 4, 98000);
-        employee[9] = new Employee("Маник", "Вера", "Карповна", 2, 87000);
+        employee[9] = new Employee("Маник", "Вера", "Карповна", 5, 87000);
 
         for (Employee value : employee) {
             System.out.println(value);
@@ -23,6 +23,11 @@ public class Main {
         ToolEmployee.totalSalaryPaiments(employee); // Метод на затраты на ЗП
         ToolEmployee.averageSalaryPaiments(employee); // Метод на серднюю ЗП
         ToolEmployee.nameSurnamePatronymic(employee); // Метод на вывод ФИО сотрудников
+
+        // Повышенная сложность
+
+        ToolEmployee.increaseSalary(employee, 10); // Индексация зарплаты
+        ToolEmployee.maxSalaryInSection(employee, 1);
     }
 
 
