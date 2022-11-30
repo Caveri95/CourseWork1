@@ -27,9 +27,13 @@ public class Main {
         // Повышенная сложность
 
         ToolEmployee.increaseSalary(employee, 10); // Индексация зарплаты
-        ToolEmployee.maxSalaryInSection(employee, 1);
+        ToolEmployee.maxSalaryOfEmployeeInSection(employee, 5); // Поиск максимальной ЗП по отделу
+        ToolEmployee.minSalaryOfEmployeeInSection(employee,1); // Поиск минимальной ЗП по отделу
+        ToolEmployee.averageSalaryInSection(employee, 1); // Средняя ЗП по отделу
+        ToolEmployee.increaseSalaryInSection(employee, 5, 6.5); // Индексация зарплаты по отделу
+        ToolEmployee.printEmployeeInSection(employee, 5); // Список сотрудников по отделам
+        ToolEmployee.employeeSalaryLessThanNumber(employee, 50000); // Список сотрудников с ЗП меньше искомой
+        ToolEmployee.employeeSalaryMoreThanNumber(employee, 70000); // Список сотрудников с ЗП выше искомой
     }
-
-
 }
 
