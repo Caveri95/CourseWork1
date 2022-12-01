@@ -110,25 +110,22 @@ public class ToolEmployee {
         float count = 0f;
         for (Employee item : employee) {
             if (item != null && item.getSection() == section) {
-                totalSalaryInSection = totalSalaryInSection + item.getSalary();
-            }
-        }
-        for (Employee item : employee) {
-            if (item != null && item.getSection() == section) {
                 count++;
+                totalSalaryInSection = totalSalaryInSection + item.getSalary();
             }
         }
         double averageSalaryInSection = totalSalaryInSection / count ;
         System.out.printf("Среднее значение заработной платы по " + section + " отделу составляет: %.2f \n", averageSalaryInSection);
     }
-    public static void increaseSalaryInSection(Employee[] employee, int section, double persent) {
+    public static void increaseSalaryInSection(Employee[] employee, int section, int persent) {
         for (Employee item : employee) {
             if (item != null && item.getSection() == section) {
+                item.setSalary(item.getSalary() * persent / 100 + item.getSalary());
                 System.out.println("После индексации на " + persent + "%, зарплата сотрудника " +
                         item.getSection() + " отдела " +
                         item.getEmployeeSurname() + " " +
                         item.getEmployeeName() + " " +
-                        item.getEmployeePatronymic() + " составила: " + (item.getSalary() * persent / 100 + item.getSalary()));
+                        item.getEmployeePatronymic() + " составила: " + item.getSalary());
             }
         }
     }
