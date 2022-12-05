@@ -1,5 +1,5 @@
 public class ToolEmployee {
-    public static void maxSalaryOfEmployee(Employee[] employee) {
+    public static int maxSalaryOfEmployee(Employee[] employee) {
         int maxSalary = 0;
         for (Employee item : employee) {
             if (item != null) {
@@ -8,31 +8,46 @@ public class ToolEmployee {
                 }
             }
         }
+        return maxSalary;
+    }
+
+    public static void maxSalaryOfEmployeePrint(Employee[] employee) {
         for (Employee value : employee) {
             if (value != null) {
-                if (maxSalary == value.getSalary()) {
+                if (value.getSalary() == maxSalaryOfEmployee(employee)) {
                     System.out.println("Самая высокая заработная плата у сотрудника - " + value);
                 }
             }
         }
     }
-    public static void minSalaryOfEmployee(Employee[] employee) {
-        int minSalary = employee[0].getSalary();
+
+    public static int minSalaryOfEmployee(Employee[] employee) {
+        int minSalary = 0;
+        for (Employee item : employee) {
+            if (item != null) {
+                minSalary = item.getSalary();
+                break;
+            }
+        }
         for (Employee value : employee) {
             if (value != null) {
-                if (minSalary > value.getSalary()) {
+                if (minSalary >= value.getSalary()) {
                     minSalary = value.getSalary();
                 }
             }
         }
-        for (Employee value : employee) {
-            if (value != null) {
-                if (minSalary == value.getSalary()) {
-                    System.out.println("Самая низкая заработная плата у сотрудника - " + value);
+        return minSalary;
+    }
+    public static void minSalaryOfEmployeePrint(Employee[] employee) {
+        for (Employee item : employee) {
+            if (item != null) {
+                if (item.getSalary() == minSalaryOfEmployee(employee)) {
+                    System.out.println("Самая низкая заработная плата у сотрудника - " + item);
                 }
             }
         }
     }
+
     public static void totalSalaryPaiments(Employee[] employee) {
         int total = 0;
         for (Employee value : employee) {
@@ -95,7 +110,13 @@ public class ToolEmployee {
         System.out.println("Максимальная зарплата по " + section + " отделу у сотрудника: " + employeeMaxSalary);
     }
     public static void minSalaryOfEmployeeInSection(Employee[] employee, int section) {
-        int minSalary = employee[0].getSalary();
+        int minSalary = 0;
+        for (Employee item : employee) {
+            if (item != null) {
+                minSalary = item.getSalary();
+                break;
+            }
+        }
         Employee employeeMinSalary = null;
         for (Employee item : employee) {
             if (item != null && item.getSection() == section && item.getSalary() < minSalary ) {
